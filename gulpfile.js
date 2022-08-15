@@ -9,6 +9,11 @@ function copyAssets() {
     gulp.src(['src/asset/images/**']).pipe(gulp.dest('dist/asset/images'))
 }
 
+function copyCss() {
+    return gulp.src(['src/css/**']).pipe(gulp.dest('dist/css')),
+      gulp.src(['src/asset/images/**']).pipe(gulp.dest('dist/asset/images'))
+  }
+
 function compileHtml() {
   return gulp.src(['src/html/**/*.html'])
     .pipe(gulp.dest('dist/html'));
@@ -25,8 +30,7 @@ function compileJs() {
 function compileScss() {
   return gulp.src('src/scss/style.scss')
     .pipe(sass()) /* compile scss */
-    .pipe(csso()) /* minify css */
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('src/css'));
 }
 
 function reload(done) {
@@ -37,7 +41,7 @@ function reload(done) {
 function watch() {
   browserSync.init({
     server: {
-      baseDir: "dist",
+      baseDir: "src",
       index: "html/index.html",
     }
 
@@ -45,7 +49,7 @@ function watch() {
   gulp.watch('src/scss/**/*.scss', gulp.series([compileScss, reload]));
   gulp.watch('src/js/**/*.js', gulp.series([compileJs, reload]));
   gulp.watch('src/asset/**/*', gulp.series([compileJs, reload]));
-  gulp.watch('src/html/**/*.html', gulp.series([copyAssets, compileHtml, reload]));
+  gulp.watch('src/html/**/*.html', gulp.series([copyAssets, copyCss, compileHtml, reload]));
 }
 
 const recompile = gulp.parallel(compileHtml, copyAssets, compileJs, compileScss);

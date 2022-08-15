@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+  font-family: $font-family;
+  font-size: $font-size-body;
+  color: $color-dart;
+  background: $color-background;
+  user-select: none;
+}
+
+a {
+  color: $color-dart;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+}
+
+small {
+  font-size: 0.75rem;
+}
+
+p {
+  color: $color-dart-variant;
+}
+
+b {
+  color: $color-dart;
+}

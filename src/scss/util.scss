@@ -1,0 +1,17 @@
+@import "variable";
+
+.primary {
+  color: $color-primary !important;
+}
+
+.success {
+  color: $color-success !important;
+}
+
+.danger {
+  color: $color-danger !important;
+}
+
+.warning {
+  color: $color-warning !important;
+}

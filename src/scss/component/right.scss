@@ -1,0 +1,191 @@
+.right {
+  margin-top: 1.4rem;
+  @include tablet {
+    width: 94%;
+    margin: 0 auto 4rem;
+  }
+  .top {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+    @include tablet {
+      padding: 0 0.8rem;
+      height: 4.6rem;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      align-items: center;
+      background: $color-white;
+      box-shadow: 0 1rem 1rem $color-light;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .info {
+      @include tablet {
+        display: none;
+      }
+    }
+    button {
+      display: none;
+      @include tablet {
+        position: absolute;
+        left: 1rem;
+        display: inline-block;
+        font-size: 2rem;
+        color: $color-dart;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      span {
+        @include tablet {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  .theme-toggler {
+    height: 1.6rem;
+    width: 4.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: $border-radius-1;
+    background: $color-light;
+    border-radius: $border-radius-1;
+    cursor: pointer;
+    @include tablet {
+      width: 4.4rem;
+      position: absolute;
+      left: 66%;
+    }
+    span {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: $transition-all;
+      &.active {
+        color: $color-white;
+        background: $color-primary;
+        border-radius: $border-radius-1;
+      }
+    }
+  }
+
+  .recent-updates {
+    margin-top: 1rem;
+
+    h2 {
+      margin-bottom: 0.8rem;
+    }
+
+    .updates {
+      padding: $card-padding;
+      border-radius: 2rem;
+      background: $color-white;
+      box-shadow: $box-shadow;
+      transition: $transition-all;
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      .update {
+        margin-bottom: 1rem;
+        display: grid;
+        grid-template-columns: 2.6rem auto;
+        gap: 1rem;
+
+        small {
+          margin-top: 0.5rem;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .sales-analytics {
+    margin-top: 2rem;
+
+    h2 {
+      margin-bottom: 0.8rem;
+    }
+
+    .item {
+      margin-bottom: 0.7rem;
+      padding: 1.4rem $card-padding;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-radius: $border-radius-3;
+      box-shadow: $box-shadow;
+      background: $color-white;
+      transition: $transition-all;
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      .right {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .info {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .icon {
+        padding: 0.6rem;
+        color: $color-white;
+        background: $color-primary;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &.offline {
+        .icon {
+          background: $color-danger;
+        }
+      }
+
+      &.customers {
+        .icon {
+          background: $color-success;
+        }
+      }
+    }
+
+    .add-product {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      border: 2px dashed $color-primary;
+      background: transparent;
+      cursor: pointer;
+      h3 {
+        font-weight: 600;
+      }
+    }
+  }
+}

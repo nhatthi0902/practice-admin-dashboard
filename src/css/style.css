@@ -119,12 +119,13 @@ aside {
     display: none;
     padding-right: 1.8rem;
     position: fixed;
-    left: 0;
+    left: -100%;
     z-index: 4;
     background: #fff;
     width: 18rem;
     height: 100vh;
     box-shadow: 1rem 3rem 4rem rgba(132, 139, 200, 0.18);
+    animation: showMenu 400ms forwards;
   }
 }
 aside .top {
@@ -247,7 +248,17 @@ aside h3 {
     display: none;
   }
 }
+@media (max-width: 768px) {
+  aside h3 {
+    display: inline;
+  }
+}
 
+@keyframes showMenu {
+  to {
+    left: 0;
+  }
+}
 main {
   margin-top: 1.4rem;
 }

@@ -1,0 +1,211 @@
+main {
+  margin-top: 1.4rem;
+  @include tablet {
+    margin-top: 8rem;
+    padding: 0 1rem;
+  }
+  .date {
+    margin-top: 4rem;
+    padding: 0.5rem 1.6rem;
+    display: inline-block;
+    background: $color-light;
+    border-radius: $border-radius-1;
+
+    input[type="date"] {
+      background: transparent;
+      color: $color-dart;
+    }
+  }
+
+  .insights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+    @include desktop {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    & > div {
+      margin-top: 1rem;
+      padding: $card-padding;
+      background: $color-white;
+      border-radius: $card-border-radius;
+      box-shadow: $box-shadow;
+      transition: $transition-all;
+
+      span {
+        padding: 0.5rem;
+        border-radius: 50%;
+        color: $color-white;
+        font-size: 2rem;
+        background: $color-primary;
+      }
+
+      .middle {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &.expenses {
+        span {
+          background: $color-danger;
+        }
+      }
+
+      &.income {
+        span {
+          background: $color-success;
+        }
+      }
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+    h3 {
+      margin: 1rem 0 0.6rem;
+    }
+
+    .progress {
+      position: relative;
+      width: $space-92;
+      height: $space-92;
+      border-radius: 50%;
+    }
+
+    svg {
+      width: $space-92;
+      circle {
+        fill: none;
+        stroke: $color-primary;
+        stroke-width: 14;
+        stroke-linecap: round;
+        transform: translate($space-5, $space-5);
+      }
+    }
+
+    .sale {
+      svg {
+        circle {
+          stroke-dashoffset: -30;
+          stroke-dasharray: 200;
+        }
+      }
+    }
+
+    .spenses {
+      svg {
+        circle {
+          stroke-dashoffset: 20;
+          stroke-dasharray: 80;
+        }
+      }
+    }
+
+    .income {
+      svg {
+        circle {
+          stroke-dashoffset: 35;
+          stroke-dasharray: 110;
+        }
+      }
+    }
+
+    .progress {
+      .number {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    small {
+      display: block;
+      margin-top: 1.3rem;
+    }
+  }
+
+  .recent-order {
+    margin-top: 2rem;
+    @include desktop {
+      margin: 2rem 0 0 8.8rem;
+      width: 94%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @include tablet {
+      width: 100%;
+      position: relative;
+      margin: 3rem 0 0 0;
+    }
+    h2 {
+      margin-bottom: 0.8rem;
+    }
+
+    table {
+      width: 100%;
+      padding: $card-padding;
+      text-align: center;
+      box-shadow: $box-shadow;
+      background: $color-white;
+      border-radius: $card-border-radius;
+      transition: $transition-all;
+      @include desktop {
+        width: 83vw;
+      }
+      @include tablet {
+        width: 100%;
+        margin: 0;
+      }
+
+      thead {
+        tr {
+          th {
+            &:first-child {
+              @include desktop {
+                display: none;
+              }
+            }
+            &:last-child {
+              @include desktop {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      tbody {
+        td {
+          height: 2.8rem;
+          color: $color-dart-variant;
+          border-bottom: 1px solid $color-light;
+        }
+        tr:last-child {
+          td {
+            border: none;
+          }
+        }
+      }
+    }
+    a {
+      text-align: center;
+      display: block;
+      margin: 1rem auto;
+      color: $color-primary;
+    }
+  }
+}
